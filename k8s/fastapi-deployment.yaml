@@ -14,10 +14,7 @@ spec:
     spec:
       containers:
         - name: fastapi
-          #image: "${DOCKER_USERNAME}/fastapi-redis:latest"
-          #image: fastapi-redis:latest
-          image: chanyanhon/fastapi-redis:latest
-          #image: "$(IMAGE_NAME)"  # Reference the variable from the ConfigMap
+          image: "$(IMAGE_NAME)"  # Reference the variable from the ConfigMap - "${DOCKER_USERNAME}/fastapi-redis:latest"
           ports:
             - containerPort: 8000
           env:
