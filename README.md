@@ -6,7 +6,6 @@ This repository contains an example of deploying a FastAPI application with Redi
 ```
 fastapi-redis-kubernetes/
 ├── k8s/                 # Kubernetes YAML files
-│   ├── config.yaml
 │   ├── fastapi-deployment.yaml
 │   ├── redis-deployment.yaml
 │   ├── fastapi-service.yaml
