@@ -117,13 +117,18 @@ If you still encounter issues, ensure your Kubernetes configuration file (`~/.ku
 
 
 
-# linux attempt
-kubectl create deployment hello-fastapi-kube --image=registry.hub.docker.com/chanyanhon/fastapi-redis
-kubectl create deployment hello-fastapi-kube --image=chanyanhon/fastapi-redis
+### Other deployment method (more simple without YAML file)
+```bash
+kubectl create deployment hello-fastapi-kube --image=registry.hub.docker.com/{$DOCKER_USERNAME}/fastapi-redis
+kubectl create deployment hello-fastapi-kube --image={$DOCKER_USERNAME}/fastapi-redis
 kubectl expose deployment hello-fastapi-kube --type=LoadBalancer --port=8000
 kubectl get service hello-fastapi-kube
 minikube service hello-fastapi-kube --url 
+```
 
+### Remove the resources
+```bash
 kubectl delete services --all
 kubectl delete deployments --all
 minikube stop
+```
